@@ -12,7 +12,7 @@ class GamesController < ApplicationController
     url = "https://wagon-dictionary.herokuapp.com/#{@answer.downcase}"
     word_dictionary = URI.open(url).read
     word = JSON.parse(word_dictionary)
-    return word
+    return word["found"]
   end
 
   def grids
